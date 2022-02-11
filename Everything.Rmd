@@ -1,0 +1,81 @@
+---
+title: "Penguins"
+author: "Karianne Kapfer"
+date: "Lab 3"
+output: html_document
+---
+
+## Data: 
+
+```{r Tidyverse, include=FALSE}
+library(tidyverse)
+
+```
+
+![Penguins of Interest](C:\Users\Karianne Kapfer\Desktop\GitHub\penguins\Penguinphoto.png)  
+
+This data comes from Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network.
+
+The Data contains information about the species, island found, body measurements, etc.  
+
+The Data itself:
+```{r data, results="hide", warning=FALSE}
+library(palmerpenguins)
+penguins
+penguins_raw
+```
+
+Exploring the data:
+```{r exploring, results='hide'}
+#view(penguins_raw)
+#View(penguins)
+#colnames(penguins)
+##?penguins
+```
+
+
+![Body Parts Of Interest According To The Data](C:\Users\Karianne Kapfer\Desktop\GitHub\penguins\body.webp) 
+
+## Single Trait Distibution
+
+```{r SingleTrait, warning=FALSE}
+
+ggplot(data = penguins) +
+  geom_boxplot(mapping = aes(x = species, y = body_mass_g, fill = species))
+
+
+```
+
+Here we see that Gentoo penguins generally have the largest body mass (this is in grams).  
+
+
+## Relationship Between Multiple Traits
+
+```{r MultipleTraits, warning=FALSE}
+#Note to self: Two continuous colored by species 
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = bill_length_mm, y = bill_depth_mm, color = species))
+
+```
+
+It is interesting that despite having the biggest body mass, the Gentoo penguins generally have the smallest bill depth and length. 
+
+## Sexual Dimorphism 
+
+```{r SexualDimorphism, warning=FALSE}
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = bill_length_mm, y = bill_depth_mm, color = sex)) +  
+  facet_wrap(~ species)
+```
+Here we see that in each species the males generally have large beaks across all species.   
+
+```{r, warning=FALSE}
+
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = bill_length_mm, y = bill_depth_mm, color = sex)) +  
+  facet_wrap(~ year + species)
+
+```
+
+Here you can see that even across years for all species the males generally had bigger beaks  
+

@@ -1,0 +1,21 @@
+name: "Penguin Website"
+navbar:
+  title: "Penguin Website"
+  left:
+    - text: "About"
+      href: index.html
+    - text: "Data"
+      href: Data.html
+    - text: "Single Trait"
+      href: Single_Trait_Distibution.html
+    - text: "Multiple_Traits"
+      href: Relationship_Between_Multiple_Traits.html
+    - text: "Sexual Dimorphism"
+      href: Sexual_Dimorphism.html
+output_dir: "."
+output:
+  html_document:
+    theme: cerulean
+    highlight: textmate
+    toc: true 
+    toc_float: true 

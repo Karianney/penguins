@@ -1,0 +1,19 @@
+---
+title: "Relationship Between Multiple Traits"
+output: html_document
+---
+
+```{r packages, include=FALSE}
+library(palmerpenguins)
+library(tidyverse)
+
+```
+
+```{r MultipleTraits, warning=FALSE}
+#Note to self: Two continuous colored by species 
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = bill_length_mm, y = bill_depth_mm, color = species))
+
+```
+
+It is interesting that despite having the biggest body mass, the Gentoo penguins generally have the smallest bill depth and length. 

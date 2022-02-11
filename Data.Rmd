@@ -1,0 +1,33 @@
+---
+title: "Data"
+output: html_document
+---
+
+```{r Tidyverse, include=FALSE}
+library(tidyverse)
+
+```
+
+![Penguins of Interest](C:\Users\Karianne Kapfer\Desktop\GitHub\penguins\Penguinphoto.png)  
+
+This data comes from Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network.
+
+The Data contains information about the species, island found, body measurements, etc.  
+
+The Data itself:
+```{r data, results="hide", warning=FALSE}
+library(palmerpenguins)
+penguins
+penguins_raw
+```
+
+Exploring the data:
+```{r exploring, results='hide'}
+#view(penguins_raw)
+#View(penguins)
+#colnames(penguins)
+##?penguins
+```
+
+
+![Body Parts Of Interest According To The Data](C:\Users\Karianne Kapfer\Desktop\GitHub\penguins\body.webp) 

@@ -1,0 +1,27 @@
+---
+title: "Sexual Dimorphism"
+output: html_document
+---
+
+```{r packages, include=FALSE}
+library(palmerpenguins)
+library(tidyverse)
+
+```
+
+```{r SexualDimorphism, warning=FALSE}
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = bill_length_mm, y = bill_depth_mm, color = sex)) +  
+  facet_wrap(~ species)
+```
+Here we see that in each species the males generally have large beaks across all species.   
+
+```{r, warning=FALSE}
+
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = bill_length_mm, y = bill_depth_mm, color = sex)) +  
+  facet_wrap(~ year + species)
+
+```
+
+Here you can see that even across years for all species the males generally had bigger beaks

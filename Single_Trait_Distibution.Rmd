@@ -1,0 +1,18 @@
+---
+title: "Single Trait Distibution"
+output: html_document
+---
+```{r packages, include=FALSE}
+library(palmerpenguins)
+library(tidyverse)
+
+```
+
+```{r SingleTrait, warning=FALSE, echo=FALSE}
+ggplot(data = penguins) +
+  geom_boxplot(mapping = aes(x = species, y = body_mass_g, fill = species))
+
+
+```
+
+Here we see that Gentoo penguins generally have the largest body mass (this is in grams).  
